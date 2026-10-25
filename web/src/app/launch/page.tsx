@@ -12,23 +12,7 @@ import {
   TALOS_NAME_SERVICE_CONTRACT_ID,
 } from "@/lib/soroban";
 import { OPERATOR_PUBLIC_KEY } from "@/lib/stellar-config";
-import { TALOS_NAME_MIN_LENGTH, TALOS_NAME_MAX_LENGTH } from "@/lib/limits";
-import {
-  type LaunchFormState,
-  LAUNCH_FORM_DEFAULTS,
-  buildCreateTalosPayload,
-} from "@/lib/schemas";
-import {
-  StepProduct,
-  StepPatron,
-  StepMitos,
-  StepKernel,
-  StepAgent,
-  StepReview,
-  LaunchStepper,
-  Field,
-  ReviewRow,
-} from "./steps";
+
 
 const STEPS: StepConfig[] = [
   { id: "product", key: "launch.steps.product" },
@@ -109,8 +93,7 @@ function LaunchForm() {
         ]);
         setNameAvailable(onChainAvailable && dbResult);
       } catch {
-        const valid =
-          /^[a-z0-9]([a-z0-9-]*[a-z0-9])?$/.test(name) && !/--/.test(name);
+
         setNameAvailable(valid);
       } finally {
         setNameChecking(false);
