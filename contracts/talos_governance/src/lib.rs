@@ -1,4 +1,5 @@
 #![allow(unused)]
+#![allow(unused)]
 //! TalosGovernance - Soroban smart contract for token-weighted governance.
 //! TalosGovernance - Soroban smart contract for token-weighted governance.
 //!
