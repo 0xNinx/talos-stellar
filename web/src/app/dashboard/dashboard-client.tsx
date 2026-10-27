@@ -467,7 +467,7 @@ function DashboardContent({ stats, approvals: initialApprovals, approvalHistory:
             ) : (
               <div className="space-y-6">
                 {talosManagement.slice(0, 3).map((talos) => (
-                  <FinancialProjectionChart key={talos.id} talosId={talos.id} />
+                  <LazyFinancialProjectionChart key={talos.id} talosId={talos.id} />
                 ))}
               </div>
             )}
